@@ -5,27 +5,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    proxy: {
-      '/api/users': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-      },
-      '/api/events': {
-        target: 'http://localhost:3002',
-        changeOrigin: true,
-      },
-      '/api/registrations': {
-        target: 'http://localhost:3003',
-        changeOrigin: true,
-      },
-      '/api/notifications': {
-        target: 'http://localhost:3004',
-        changeOrigin: true,
-      },
-      '/health': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-      },
-    },
+    // No proxy needed — frontend calls the API Gateway directly on port 4000
   },
 })

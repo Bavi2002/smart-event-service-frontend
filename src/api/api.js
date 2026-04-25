@@ -3,7 +3,7 @@
    Smart Event Management System
    ============================================ */
 
-const API_BASE = '';  // Vite proxy handles routing
+const API_BASE = 'http://localhost:3006';  // API Gateway
 
 // ---- Helpers ----
 
@@ -143,6 +143,6 @@ export const registrationApi = {
 
 export const notificationApi = {
   getMyNotifications() {
-    return request('/api/notifications/my');
+    return request('/api/notifications/my-notifications');
   },
 };
