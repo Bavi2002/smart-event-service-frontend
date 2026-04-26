@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { eventApi } from '../api/api';
+import { Pencil, Sparkles } from 'lucide-react';
 import Loader from '../components/Loader';
 import './CreateEvent.css';
 
@@ -87,7 +88,13 @@ export default function CreateEvent() {
     <div className="create-event-page" id="create-event-page">
       <div className="create-event-card glass-card">
         <div className="create-event-header">
-          <h1>{editId ? '✏️ Edit Event' : '✨ Create New Event'}</h1>
+          <h1>
+            {editId ? (
+              <><Pencil size={22} style={{ verticalAlign: 'middle', marginRight: '8px' }} />Edit Event</>
+            ) : (
+              <><Sparkles size={22} style={{ verticalAlign: 'middle', marginRight: '8px' }} />Create New Event</>
+            )}
+          </h1>
           <p>{editId ? 'Update your event details below' : 'Fill in the details to create your event'}</p>
         </div>
 

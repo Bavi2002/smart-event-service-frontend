@@ -1,7 +1,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .modal-content {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);
@@ -22,6 +22,7 @@
   overflow-y: auto;
   animation: fadeInUp 0.3s ease;
   position: relative;
+  box-shadow: var(--shadow-lg);
 }
 
 .modal-close {
@@ -44,7 +45,7 @@
 
 .modal-close:hover {
   color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-bg-tertiary);
 }
 
 .modal-title {

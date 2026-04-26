@@ -14,61 +14,7 @@
   text-align: center;
   padding: var(--space-3xl) var(--space-xl);
   overflow: hidden;
-}
-
-.landing-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-hero);
-  pointer-events: none;
-}
-
-.landing-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(transparent, var(--color-bg-primary));
-  pointer-events: none;
-}
-
-/* Floating orbs */
-.landing-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-  animation: float 6s ease-in-out infinite;
-}
-
-.landing-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: var(--color-primary);
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.landing-orb-2 {
-  width: 300px;
-  height: 300px;
-  background: var(--color-accent);
-  top: 30%;
-  right: 10%;
-  animation-delay: 2s;
-}
-
-.landing-orb-3 {
-  width: 250px;
-  height: 250px;
-  background: hsl(300, 70%, 50%);
-  bottom: 20%;
-  left: 30%;
-  animation-delay: 4s;
+  background: var(--color-bg-primary);
 }
 
 .landing-hero-content {
@@ -82,12 +28,12 @@
   align-items: center;
   gap: var(--space-sm);
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-tertiary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-xl);
   animation: fadeInUp 0.6s ease forwards;
 }
@@ -101,13 +47,7 @@
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: 0.1s;
   opacity: 0;
-}
-
-.landing-hero-title .gradient-text {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text-primary);
 }
 
 .landing-hero-subtitle {
@@ -135,6 +75,7 @@
 .landing-features {
   padding: var(--space-3xl) var(--space-xl);
   position: relative;
+  background: var(--color-bg-secondary);
 }
 
 .landing-features-title {
@@ -161,6 +102,7 @@
 .feature-card {
   padding: var(--space-2xl);
   text-align: center;
+  background: var(--color-bg-primary);
 }
 
 .feature-icon {
@@ -170,21 +112,27 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--space-lg);
-  background: rgba(120, 80, 220, 0.1);
   border-radius: var(--radius-md);
-  font-size: 1.5rem;
 }
 
-.feature-card:nth-child(2) .feature-icon {
-  background: rgba(0, 220, 200, 0.1);
+.feature-icon-purple {
+  background: #f3e8ff;
+  color: #7c3aed;
 }
 
-.feature-card:nth-child(3) .feature-icon {
-  background: rgba(241, 196, 15, 0.1);
+.feature-icon-green {
+  background: #dcfce7;
+  color: #16a34a;
 }
 
-.feature-card:nth-child(4) .feature-icon {
-  background: rgba(231, 76, 60, 0.1);
+.feature-icon-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.feature-icon-orange {
+  background: #ffedd5;
+  color: #ea580c;
 }
 
 .feature-title {
@@ -202,7 +150,7 @@
 /* Stats */
 .landing-stats {
   padding: var(--space-3xl) var(--space-xl);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--color-bg-primary);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -219,10 +167,7 @@
 .stat-value {
   font-size: var(--font-size-4xl);
   font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text-primary);
 }
 
 .stat-label {
@@ -235,6 +180,7 @@
 .landing-cta {
   padding: var(--space-3xl) var(--space-xl);
   text-align: center;
+  background: var(--color-bg-secondary);
 }
 
 .landing-cta-inner {
@@ -242,17 +188,10 @@
   margin: 0 auto;
   padding: var(--space-3xl);
   border-radius: var(--radius-xl);
-  background: var(--gradient-card);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
-}
-
-.landing-cta-inner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(120, 80, 220, 0.1) 0%, transparent 70%);
 }
 
 .landing-cta h2 {

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { MapPin, Clock, Users, ArrowRight } from 'lucide-react';
 import './EventCard.css';
 
 export default function EventCard({ event }) {
@@ -45,22 +46,22 @@ export default function EventCard({ event }) {
 
       <div className="event-card-meta">
         <span className="event-card-meta-item">
-          <span className="event-card-meta-icon">📍</span>
+          <MapPin size={15} className="event-card-meta-icon" />
           {event.location}
         </span>
         <span className="event-card-meta-item">
-          <span className="event-card-meta-icon">🕐</span>
+          <Clock size={15} className="event-card-meta-icon" />
           {formatTime(event.date)}
         </span>
         <span className="event-card-meta-item">
-          <span className="event-card-meta-icon">👥</span>
+          <Users size={15} className="event-card-meta-icon" />
           {event.capacity} spots
         </span>
       </div>
 
       <div className="event-card-footer">
         <span className="event-card-date">{formatDate(event.date)}</span>
-        <span className="event-card-arrow">→</span>
+        <ArrowRight size={18} className="event-card-arrow" />
       </div>
     </div>
   );

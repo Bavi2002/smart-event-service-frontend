@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { eventApi, registrationApi } from '../api/api';
 import { useAuth } from '../context/AuthContext';
+import { ArrowLeft, Calendar, Clock, MapPin, Users, Pencil, Trash2, PartyPopper, Minus, Plus } from 'lucide-react';
 import Loader from '../components/Loader';
 import Modal from '../components/Modal';
 import './EventDetail.css';
@@ -103,7 +104,7 @@ export default function EventDetail() {
       <div className="event-detail">
         <div className="alert alert-error">{error}</div>
         <button className="btn btn-secondary" onClick={() => navigate('/events')}>
-          ← Back to Events
+          <ArrowLeft size={16} /> Back to Events
         </button>
       </div>
     );
@@ -117,7 +118,7 @@ export default function EventDetail() {
   return (
     <div className="event-detail" id="event-detail-page">
       <button className="event-detail-back" onClick={() => navigate('/events')} id="back-to-events">
-        ← Back to Events
+        <ArrowLeft size={16} /> Back to Events
       </button>
 
       <div className="event-detail-grid">
@@ -132,28 +133,36 @@ export default function EventDetail() {
 
           <div className="event-detail-info-card glass-card">
             <div className="event-detail-info-row">
-              <div className="event-detail-info-icon">📅</div>
+              <div className="event-detail-info-icon">
+                <Calendar size={18} />
+              </div>
               <div>
                 <div className="event-detail-info-label">Date</div>
                 <div className="event-detail-info-value">{formatDate(event.date)}</div>
               </div>
             </div>
             <div className="event-detail-info-row">
-              <div className="event-detail-info-icon">🕐</div>
+              <div className="event-detail-info-icon">
+                <Clock size={18} />
+              </div>
               <div>
                 <div className="event-detail-info-label">Time</div>
                 <div className="event-detail-info-value">{formatTime(event.date)}</div>
               </div>
             </div>
             <div className="event-detail-info-row">
-              <div className="event-detail-info-icon">📍</div>
+              <div className="event-detail-info-icon">
+                <MapPin size={18} />
+              </div>
               <div>
                 <div className="event-detail-info-label">Location</div>
                 <div className="event-detail-info-value">{event.location}</div>
               </div>
             </div>
             <div className="event-detail-info-row">
-              <div className="event-detail-info-icon">👥</div>
+              <div className="event-detail-info-icon">
+                <Users size={18} />
+              </div>
               <div>
                 <div className="event-detail-info-label">Capacity</div>
                 <div className="event-detail-info-value">{remaining} / {event.capacity} spots remaining</div>
@@ -176,14 +185,14 @@ export default function EventDetail() {
                 onClick={() => navigate(`/create-event?edit=${event._id}`)}
                 id="edit-event-btn"
               >
-                ✏️ Edit Event
+                <Pencil size={16} /> Edit Event
               </button>
               <button
                 className="btn btn-danger"
                 onClick={() => setShowDeleteModal(true)}
                 id="delete-event-btn"
               >
-                🗑️ Delete Event
+                <Trash2 size={16} /> Delete Event
               </button>
             </div>
           )}
@@ -194,7 +203,9 @@ export default function EventDetail() {
           <div className="booking-card glass-card" id="booking-card">
             {bookingSuccess ? (
               <div className="booking-success">
-                <div className="booking-success-icon">🎉</div>
+                <div className="booking-success-icon">
+                  <PartyPopper size={40} strokeWidth={1.5} />
+                </div>
                 <h3>Booking Confirmed!</h3>
                 <p style={{ color: 'var(--color-text-secondary)', margin: 'var(--space-md) 0' }}>
                   You've booked {ticketCount} ticket{ticketCount > 1 ? 's' : ''} for this event.
@@ -236,7 +247,7 @@ export default function EventDetail() {
                           disabled={ticketCount <= 1}
                           id="ticket-decrease"
                         >
-                          −
+                          <Minus size={16} />
                         </button>
                         <span className="booking-ticket-count" id="ticket-count">{ticketCount}</span>
                         <button
@@ -245,7 +256,7 @@ export default function EventDetail() {
                           disabled={ticketCount >= 10 || ticketCount >= remaining}
                           id="ticket-increase"
                         >
-                          +
+                          <Plus size={16} />
                         </button>
                       </div>
                     </div>
@@ -274,7 +285,7 @@ export default function EventDetail() {
 
                 {!user && isUpcoming && remaining > 0 && (
                   <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--font-size-sm)', textAlign: 'center' }}>
-                    Please <a href="/login" style={{ color: 'var(--color-primary-light)' }}>sign in</a> to book tickets.
+                    Please <a href="/login" style={{ color: 'var(--color-primary)' }}>sign in</a> to book tickets.
                   </p>
                 )}
               </>

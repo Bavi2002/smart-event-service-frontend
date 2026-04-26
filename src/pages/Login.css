@@ -6,14 +6,7 @@
   padding: var(--space-2xl);
   min-height: calc(100vh - var(--navbar-height));
   position: relative;
-}
-
-.auth-page::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-hero);
-  pointer-events: none;
+  background: var(--color-bg-secondary);
 }
 
 .auth-card {
@@ -23,6 +16,8 @@
   position: relative;
   z-index: 1;
   animation: fadeInUp 0.5s ease;
+  background: var(--color-bg-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .auth-header {
@@ -34,7 +29,7 @@
   width: 56px;
   height: 56px;
   margin: 0 auto var(--space-lg);
-  background: var(--gradient-primary);
+  background: var(--color-primary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -60,6 +55,6 @@
 }
 
 .auth-footer a {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   font-weight: 600;
 }

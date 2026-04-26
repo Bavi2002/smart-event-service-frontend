@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Rocket } from 'lucide-react';
 import Loader from '../components/Loader';
 import '../pages/Login.css';
 
@@ -45,7 +46,9 @@ export default function Register() {
     <div className="auth-page" id="register-page">
       <div className="auth-card glass-card">
         <div className="auth-header">
-          <div className="auth-icon">🚀</div>
+          <div className="auth-icon">
+            <Rocket size={24} color="#fff" />
+          </div>
           <h1>Create Account</h1>
           <p>Join Smart Events and start exploring</p>
         </div>

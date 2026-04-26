@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registrationApi } from '../api/api';
+import { Ticket, Calendar, FileText } from 'lucide-react';
 import Loader from '../components/Loader';
 import Modal from '../components/Modal';
 import './MyBookings.css';
@@ -67,7 +68,9 @@ export default function MyBookings() {
 
       {bookings.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state-icon">🎫</div>
+          <div className="empty-state-icon">
+            <Ticket size={48} strokeWidth={1.5} />
+          </div>
           <h3>No bookings yet</h3>
           <p>Browse events and book your first ticket!</p>
           <button
@@ -94,9 +97,9 @@ export default function MyBookings() {
                   {booking.eventTitle || 'Untitled Event'}
                 </span>
                 <div className="booking-item-meta">
-                  <span>🎫 {booking.ticketCount} ticket{booking.ticketCount > 1 ? 's' : ''}</span>
-                  <span>📅 Booked {formatDate(booking.bookedAt || booking.createdAt)}</span>
-                  {booking.notes && <span>📝 {booking.notes}</span>}
+                  <span><Ticket size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />{booking.ticketCount} ticket{booking.ticketCount > 1 ? 's' : ''}</span>
+                  <span><Calendar size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />Booked {formatDate(booking.bookedAt || booking.createdAt)}</span>
+                  {booking.notes && <span><FileText size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />{booking.notes}</span>}
                 </div>
               </div>
               <div className="booking-item-actions" onClick={(e) => e.stopPropagation()}>

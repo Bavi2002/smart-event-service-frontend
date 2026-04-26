@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Sparkles, Ticket, BarChart3, Bell, Shield, ArrowRight } from 'lucide-react';
 import './Landing.css';
 
 export default function Landing() {
@@ -9,18 +10,15 @@ export default function Landing() {
     <div className="landing">
       {/* Hero */}
       <section className="landing-hero" id="landing-hero">
-        <div className="landing-orb landing-orb-1" />
-        <div className="landing-orb landing-orb-2" />
-        <div className="landing-orb landing-orb-3" />
-
         <div className="landing-hero-content">
           <div className="landing-hero-badge">
-            ✨ Smart Event Management Platform
+            <Sparkles size={16} />
+            Smart Event Management Platform
           </div>
 
           <h1 className="landing-hero-title">
             Discover & Manage<br />
-            <span className="gradient-text">Events Seamlessly</span>
+            Events Seamlessly
           </h1>
 
           <p className="landing-hero-subtitle">
@@ -31,6 +29,7 @@ export default function Landing() {
           <div className="landing-hero-actions">
             <Link to="/events" className="btn btn-primary btn-lg" id="hero-browse-btn">
               Browse Events
+              <ArrowRight size={18} />
             </Link>
             {!user && (
               <Link to="/register" className="btn btn-secondary btn-lg" id="hero-signup-btn">
@@ -50,7 +49,9 @@ export default function Landing() {
 
         <div className="landing-features-grid">
           <div className="feature-card glass-card animate-fade-in-up stagger-1">
-            <div className="feature-icon">🎫</div>
+            <div className="feature-icon feature-icon-purple">
+              <Ticket size={24} />
+            </div>
             <h4 className="feature-title">Easy Booking</h4>
             <p className="feature-desc">
               Book tickets for any event with just a few clicks. Real-time availability and instant confirmation.
@@ -58,7 +59,9 @@ export default function Landing() {
           </div>
 
           <div className="feature-card glass-card animate-fade-in-up stagger-2">
-            <div className="feature-icon">📊</div>
+            <div className="feature-icon feature-icon-green">
+              <BarChart3 size={24} />
+            </div>
             <h4 className="feature-title">Event Management</h4>
             <p className="feature-desc">
               Create and manage events effortlessly. Track registrations, capacity, and participant details.
@@ -66,7 +69,9 @@ export default function Landing() {
           </div>
 
           <div className="feature-card glass-card animate-fade-in-up stagger-3">
-            <div className="feature-icon">🔔</div>
+            <div className="feature-icon feature-icon-blue">
+              <Bell size={24} />
+            </div>
             <h4 className="feature-title">Smart Notifications</h4>
             <p className="feature-desc">
               Get email confirmations and reminders. Never miss an event with our smart notification system.
@@ -74,7 +79,9 @@ export default function Landing() {
           </div>
 
           <div className="feature-card glass-card animate-fade-in-up stagger-4">
-            <div className="feature-icon">🔒</div>
+            <div className="feature-icon feature-icon-orange">
+              <Shield size={24} />
+            </div>
             <h4 className="feature-title">Secure & Reliable</h4>
             <p className="feature-desc">
               Built with microservices architecture. JWT authentication keeps your data safe and secure.
@@ -113,6 +120,7 @@ export default function Landing() {
             <p>Join thousands of event organizers and attendees on Smart Events.</p>
             <Link to="/register" className="btn btn-primary btn-lg" id="cta-signup-btn" style={{ position: 'relative' }}>
               Create Free Account
+              <ArrowRight size={18} />
             </Link>
           </div>
         </section>

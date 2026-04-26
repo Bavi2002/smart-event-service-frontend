@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Lock } from 'lucide-react';
 import Loader from '../components/Loader';
 import './Login.css';
 
@@ -34,7 +35,9 @@ export default function Login() {
     <div className="auth-page" id="login-page">
       <div className="auth-card glass-card">
         <div className="auth-header">
-          <div className="auth-icon">🔐</div>
+          <div className="auth-icon">
+            <Lock size={24} color="#fff" />
+          </div>
           <h1>Welcome Back</h1>
           <p>Sign in to your account to continue</p>
         </div>

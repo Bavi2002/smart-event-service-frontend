@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { X } from 'lucide-react';
 import './Modal.css';
 
 export default function Modal({ isOpen, onClose, title, children }) {
@@ -19,7 +20,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
-          ✕
+          <X size={18} />
         </button>
         {title && <h3 className="modal-title">{title}</h3>}
         {children}

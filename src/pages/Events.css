@@ -36,8 +36,8 @@
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: var(--font-size-base);
-  opacity: 0.5;
+  color: var(--color-text-muted);
+  pointer-events: none;
 }
 
 .events-search .form-input {

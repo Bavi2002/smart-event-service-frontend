@@ -3,7 +3,7 @@
    Smart Event Management System
    ============================================ */
 
-const API_BASE = 'http://localhost:3006';  // API Gateway
+const API_BASE = 'http://localhost:3005';  // API Gateway
 
 // ---- Helpers ----
 

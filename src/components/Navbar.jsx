@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Zap, Menu, X, User, LogOut } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -20,7 +21,9 @@ export default function Navbar() {
     <nav className="navbar" id="main-navbar">
       <div className="navbar-inner">
         <Link to="/" className="navbar-brand" id="navbar-brand">
-          <span className="navbar-brand-icon">⚡</span>
+          <span className="navbar-brand-icon">
+            <Zap size={18} />
+          </span>
           Smart Events
         </Link>
 
@@ -30,7 +33,7 @@ export default function Navbar() {
           aria-label="Toggle menu"
           id="navbar-toggle"
         >
-          {menuOpen ? '✕' : '☰'}
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
         <div className={`navbar-links${menuOpen ? ' open' : ''}`} id="navbar-links">
@@ -115,6 +118,7 @@ export default function Navbar() {
               </NavLink>
               <span className="navbar-divider" />
               <button className="btn btn-ghost btn-sm" onClick={handleLogout} id="nav-logout">
+                <LogOut size={16} />
                 Logout
               </button>
             </>

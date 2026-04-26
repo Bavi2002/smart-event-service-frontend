@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { eventApi } from '../api/api';
+import { Search, Theater } from 'lucide-react';
 import EventCard from '../components/EventCard';
 import Loader from '../components/Loader';
 import './Events.css';
@@ -47,7 +48,7 @@ export default function Events() {
 
       <div className="events-filters animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
         <div className="events-search">
-          <span className="events-search-icon">🔍</span>
+          <Search size={16} className="events-search-icon" />
           <input
             type="text"
             className="form-input"
@@ -75,7 +76,9 @@ export default function Events() {
       ) : events.length === 0 ? (
         <div className="events-empty">
           <div className="empty-state">
-            <div className="empty-state-icon">🎭</div>
+            <div className="empty-state-icon">
+              <Theater size={48} strokeWidth={1.5} />
+            </div>
             <h3>No events found</h3>
             <p>Try adjusting your search or check back later for new events.</p>
           </div>
